@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    padding: 30px 25px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Header */
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a1a2e;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h1::before {
+    content: "🌤️";
+    font-size: 28px;
+}
+
+/* Formulario de búsqueda */
+form {
+    margin-bottom: 35px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    background: white;
+    color: #333;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"]:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+    font-weight: 400;
+}
+
+button {
+    width: 100%;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Contenedor de la información del clima */
+.weather-info {
+    text-align: center;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ciudad y país */
+.city-name {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.city-name::after {
+    content: "📍";
+    font-size: 20px;
+}
+
+/* Temperatura principal */
+.temperature {
+    font-size: 72px;
+    font-weight: 700;
+    color: #667eea;
+    margin: 20px 0;
+    line-height: 1;
+}
+
+.temperature span {
+    font-size: 24px;
+    font-weight: 400;
+    color: #999;
+}
+
+/* Descripción del clima */
+.description {
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Contenedor de temperaturas min/max */
+.temp-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 20px 0;
+}
+
+.temp-item {
+    text-align: center;
+}
+
+.temp-label {
+    font-size: 14px;
+    color: #999;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.temp-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Imagen del clima */
+.weather-icon {
+    margin: 20px auto 0;
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Mensaje de error */
+.error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    color: #667eea;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px 35px;
+        border-radius: 30px;
+    }
+
+    .city-name {
+        font-size: 26px;
+    }
+
+    .temperature {
+        font-size: 56px;
+    }
+
+    .temperature span {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    .temp-value {
+        font-size: 18px;
+    }
+
+    .temp-details {
+        gap: 30px;
+    }
+}
+
+/* Efecto de vidrio adicional */
+@media (min-width: 768px) {
+    .container {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.98);
+    }
+}
