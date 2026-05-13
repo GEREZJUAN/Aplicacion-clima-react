@@ -8,7 +8,7 @@ export const WeatherApp = () => {
   
 
   const urlBase = 'https://api.openweathermap.org/data/2.5/weather'
-  const API_KEY = 'ba55d9ef528fb51751e8bbaa5834c398'
+  const API_KEY = 'API_KEY'
   const difKelvin = 273.15 // para obtener los grados celsious debemos restar los numero de los grados Kelvin
 
 
